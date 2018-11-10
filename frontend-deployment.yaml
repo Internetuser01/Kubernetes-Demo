@@ -29,11 +29,9 @@ spec:
         - containerPort: 80    
         volumeMounts:
           - mountPath: /test-pd
-            name: demovolume
+            name: demov2olume
       volumes:
-      - name: demovolume
-        # This GCE PD must already exist.
-        gcePersistentDisk:
-          pdName:  demodisk
-          fsType: ext4
+      - name: demo2volume
+        persistentVolumeClaim:
+          claimName: democlaim
         
