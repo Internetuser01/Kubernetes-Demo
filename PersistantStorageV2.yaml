@@ -11,3 +11,11 @@ spec:
   storageClassName: local-storage
   local:
     path: /local-pv
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: kubernetes.io/hostname
+          operator: In
+          values:
+          - debia2
